@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "React Chrome  BoilerPlate",
+  "version": "1.0.0",
+  "description": "A React extension BoilerPlate",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "24": "icon.png",
+      "32": "icon.png"
+    },
+    "default_title": "Market Automator",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js", "jquery.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["tabs", "bookmarks", "storage", "identity"]
+}
